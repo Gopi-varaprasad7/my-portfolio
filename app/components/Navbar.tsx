@@ -70,7 +70,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-lg'
+          ? 'bg-transparent dark:bg-slate-950/90 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -85,7 +85,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className='hidden md:flex items-center gap-8'>
+          <div className='hidden md:flex items-center gap-8 '>
             {navLinks.map(({ label, href }) => (
               <Link
                 key={href}
@@ -94,7 +94,7 @@ const Navbar = () => {
                 className={`text-sm font-medium transition-colors hover:text-blue-500 ${
                   activeSection === href.slice(1)
                     ? 'text-blue-600'
-                    : 'text-slate-600 dark:text-slate-400'
+                    : 'text-white dark:text-slate-400'
                 }`}
               >
                 {label}

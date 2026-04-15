@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <section id='about' className='py-20 md:py-24 bg-background'>
+    <section id='about' className='py-20 md:py-24 bg-transparent text-white'>
       <div className='max-w-275 mx-auto px-4 md:px-6'>
         <motion.div
           initial={{ opacity: 1, y: 30 }}
@@ -15,9 +15,9 @@ export default function About() {
           transition={{ duration: 0.35, ease: 'easeOut' }}
         >
           <h2 className=' text-3xl md:text-4xl font-bold mb-8 text-center'>
-            About <span className='text-primary'>Me</span>
+            About <span className='text-blue-600'>Me</span>
           </h2>
-          <div className='max-w-3xl mx-auto space-y-5 text-muted-foreground leading-relaxed text-center md:text-left'>
+          <div className=' mx-auto space-y-5 text-muted-foreground leading-relaxed text-center md:text-left'>
             <p>
               I got into coding because I wanted to build the tool I needed —
               and ended up falling in love with the craft. There&apos;s
@@ -38,8 +38,8 @@ export default function About() {
               scale.
             </p>
             <div className='pt-4 flex justify-center md:justify-start'>
-              <button className='gap-2'>
-                <Link href={''}>
+              <button className='gap-2 border px-4 py-2'>
+                <Link href={''} className='flex gap-2'>
                   <FileDown size={16} />
                   Download Resume
                 </Link>
