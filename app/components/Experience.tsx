@@ -13,14 +13,6 @@ const timelineData = [
       'Leading the frontend team in building a SaaS platform with React and TypeScript. Improved page load speed by 40% and implemented a design system used across 5 products.',
   },
   {
-    type: 'work' as const,
-    title: 'Full-Stack Developer',
-    org: 'StartupXYZ',
-    period: '2020 — 2022',
-    description:
-      'Built and shipped a customer-facing dashboard from scratch using React, Node.js, and PostgreSQL. Owned the full stack from database design to deployment.',
-  },
-  {
     type: 'education' as const,
     title: 'B.Tech in Computer Science',
     org: 'Sree Rama Engineering Collage',
