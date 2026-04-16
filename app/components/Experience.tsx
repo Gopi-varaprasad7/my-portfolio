@@ -18,7 +18,7 @@ const timelineData = [
     org: 'Sree Rama Engineering Collage',
     period: '2020 — 2024',
     description:
-      "Graduated with distinction. Focused on algorithms, data structures, and web technologies. Led the university's coding club.",
+      "Graduated with distinction. Focused on algorithms, data structures, and web technologies. Led the Collage's coding club.",
   },
 ];
 
