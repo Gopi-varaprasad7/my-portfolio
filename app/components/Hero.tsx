@@ -105,7 +105,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className='w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-blue-600 bg-muted flex items-center justify-center text-5xl md:text-7xl shadow-2xl'>
-              👨‍💻
+              <img src='/gopi.png' alt='Gopi' />
             </div>
           </motion.div>
         </div>
