@@ -6,10 +6,18 @@ import { Mail, X, Send } from 'lucide-react';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 const socials = [
-  { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-  { icon: FaLinkedinIn, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: X, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:gopi@example.com', label: 'Email' },
+  {
+    icon: FaGithub,
+    href: 'https://github.com/Gopi-varaprasad7',
+    label: 'GitHub',
+  },
+  {
+    icon: FaLinkedinIn,
+    href: 'https://www.linkedin.com/in/gopi-varaprasad-koduri-3034b5252/',
+    label: 'LinkedIn',
+  },
+  { icon: X, href: 'https://x.com/GopiVaraprasad7', label: 'Twitter' },
+  { icon: Mail, href: 'mailto:kodurigopi98722@gmail.com', label: 'Email' },
 ];
 
 const Contact = () => {
@@ -20,18 +28,24 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulated submission for Next.js
     try {
-      // Here you would typically call a Next.js API route or Server Action
-      console.log('Form data ready for Next.js backend:', form);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
 
-      // Artificial delay to show loading state
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const data = await res.json();
 
-      alert('Message sent successfully!');
-      setForm({ name: '', email: '', message: '' });
+      if (data.success) {
+        alert('Message sent successfully!');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        alert('Something went wrong');
+      }
     } catch (error) {
-      console.error('Submission failed', error);
+      console.error(error);
+      alert('Error sending message');
     } finally {
       setIsLoading(false);
     }
