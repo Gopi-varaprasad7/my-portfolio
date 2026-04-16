@@ -87,7 +87,7 @@ const Hero = () => {
               {/* Resume Button */}
               <a
                 href='/resume.pdf'
-                download='gopi_full_stack.pdf'
+                download='resume.pdf'
                 className='border rounded flex items-center justify-center gap-2 px-6 py-2 transition-colors hover:bg-blue-400 hover:text-white'
               >
                 <FileDown size={16} />
