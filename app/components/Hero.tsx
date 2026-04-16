@@ -85,15 +85,14 @@ const Hero = () => {
               </button>
 
               {/* Resume Button */}
-              <button className='border rounded hover:bg-muted transition-colors hover:bg-blue-400 hover:text-white'>
-                <a
-                  href='/resume.pdf'
-                  download='Gopi_Resume.pdf'
-                  className='flex items-center justify-center gap-2 px-6 py-2 w-full h-full'
-                >
-                  <FileDown size={16} /> Download resume
-                </a>
-              </button>
+              <a
+                href='/resume.pdf'
+                download='gopi_full_stack.pdf'
+                className='border rounded flex items-center justify-center gap-2 px-6 py-2 transition-colors hover:bg-blue-400 hover:text-white'
+              >
+                <FileDown size={16} />
+                Download Resume
+              </a>
             </div>
           </motion.div>
 
