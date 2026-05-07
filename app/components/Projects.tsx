@@ -7,12 +7,12 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'TaskFlow',
+    title: 'Planly',
     description:
-      'A project management app with real-time collaboration, drag-and-drop boards, and team analytics.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
-    liveUrl: '#',
-    githubUrl: '#',
+      'AI-powered SaaS platform that generates personalized learning roadmaps with progress tracking and subscription-based access.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Tailwind', 'Stripe'],
+    liveUrl: 'https://app.gopikoduri.com/app',
+    githubUrl: 'https://github.com/Gopi-varaprasad7/daily-progress-hub',
   },
   {
     title: 'ShopEase',
