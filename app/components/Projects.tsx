@@ -10,6 +10,7 @@ const projects = [
     title: 'Planly',
     description:
       'AI-powered SaaS platform that generates personalized learning roadmaps with progress tracking and subscription-based access.',
+    image: 'planly.png',
     tags: ['React', 'TypeScript', 'Supabase', 'Tailwind', 'Stripe'],
     liveUrl: 'https://app.gopikoduri.com/app',
     githubUrl: 'https://github.com/Gopi-varaprasad7/daily-progress-hub',
@@ -106,7 +107,7 @@ const Projects = () => {
             >
               {/* Image Placeholder - Replace with <Image /> if you have assets */}
               <div className='h-48 bg-muted flex items-center justify-center text-4xl group-hover:scale-105 transition-transform duration-500'>
-                🚀
+                <img src={project.image} alt={project.title} />
               </div>
 
               <div className='p-5'>
