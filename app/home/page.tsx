@@ -9,7 +9,12 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div className='bg-slate-900 min-h-screen'>
+    <div
+      className='bg-gradient-to-b
+from-blue-400
+via-blue-600
+to-blue-900 min-h-screen'
+    >
       <Navbar />
       <Hero />
       <About />
