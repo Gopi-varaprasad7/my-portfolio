@@ -61,10 +61,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className='text-muted-foreground text-sm md:text-base font-medium mb-3'>
+            <p className='font-roba text-muted-foreground text-2xl  font-medium mb-3'>
               Hi, I&apos;m Gopi 👋
             </p>
-            <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4'>
+            <h1 className='font-roba text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-4'>
               I build fast, scalable web apps that users actually{' '}
               <span className='text-primary'>love.</span>
             </h1>
@@ -103,7 +103,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className='w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-blue-600 bg-muted flex items-center justify-center text-5xl md:text-7xl shadow-2xl'>
+            <div className='w-48 h-48 md:w-98 md:h-98 rounded-full border-4 border-blue-600 bg-muted flex items-center justify-center text-5xl md:text-7xl shadow-2xl'>
               <img src='/gopi.png' alt='Gopi' />
             </div>
           </motion.div>
