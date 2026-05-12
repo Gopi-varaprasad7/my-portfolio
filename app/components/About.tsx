@@ -15,7 +15,7 @@ export default function About() {
           transition={{ duration: 0.35, ease: 'easeOut' }}
         >
           <h2 className=' text-3xl md:text-4xl font-bold mb-8 text-center'>
-            About <span className='text-blue-600'>Me</span>
+            About <span className=''>Me</span>
           </h2>
           <div className=' mx-auto space-y-5 text-muted-foreground leading-relaxed text-center md:text-left'>
             <p>

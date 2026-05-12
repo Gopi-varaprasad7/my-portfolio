@@ -15,46 +15,46 @@ const projects = [
     liveUrl: 'https://app.gopikoduri.com/app',
     githubUrl: 'https://github.com/Gopi-varaprasad7/daily-progress-hub',
   },
-  {
-    title: 'ShopEase',
-    description:
-      'Full-stack e-commerce platform with Stripe payments, admin dashboard, and inventory management.',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'Stripe'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'DevPulse',
-    description:
-      'Developer productivity tracker that integrates with GitHub and visualizes coding activity over time.',
-    tags: ['React', 'D3.js', 'GitHub API', 'Firebase'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'WeatherNow',
-    description:
-      'Minimalist weather app with location-based forecasts, interactive maps, and severe weather alerts.',
-    tags: ['React', 'Tailwind', 'OpenWeather API'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'ChatSphere',
-    description:
-      'Real-time messaging app with end-to-end encryption, file sharing, and group chat support.',
-    tags: ['React', 'Node.js', 'MongoDB', 'WebRTC'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'PortfolioGen',
-    description:
-      'A portfolio generator that creates stunning developer portfolios from a simple JSON config.',
-    tags: ['TypeScript', 'React', 'Tailwind CSS'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
+  // {
+  //   title: 'ShopEase',
+  //   description:
+  //     'Full-stack e-commerce platform with Stripe payments, admin dashboard, and inventory management.',
+  //   tags: ['Next.js', 'TypeScript', 'Prisma', 'Stripe'],
+  //   liveUrl: '#',
+  //   githubUrl: '#',
+  // },
+  // {
+  //   title: 'DevPulse',
+  //   description:
+  //     'Developer productivity tracker that integrates with GitHub and visualizes coding activity over time.',
+  //   tags: ['React', 'D3.js', 'GitHub API', 'Firebase'],
+  //   liveUrl: '#',
+  //   githubUrl: '#',
+  // },
+  // {
+  //   title: 'WeatherNow',
+  //   description:
+  //     'Minimalist weather app with location-based forecasts, interactive maps, and severe weather alerts.',
+  //   tags: ['React', 'Tailwind', 'OpenWeather API'],
+  //   liveUrl: '#',
+  //   githubUrl: '#',
+  // },
+  // {
+  //   title: 'ChatSphere',
+  //   description:
+  //     'Real-time messaging app with end-to-end encryption, file sharing, and group chat support.',
+  //   tags: ['React', 'Node.js', 'MongoDB', 'WebRTC'],
+  //   liveUrl: '#',
+  //   githubUrl: '#',
+  // },
+  // {
+  //   title: 'PortfolioGen',
+  //   description:
+  //     'A portfolio generator that creates stunning developer portfolios from a simple JSON config.',
+  //   tags: ['TypeScript', 'React', 'Tailwind CSS'],
+  //   liveUrl: '#',
+  //   githubUrl: '#',
+  // },
 ];
 
 const containerVariants = {
@@ -89,7 +89,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
         >
-          Featured <span className='text-blue-600'>Projects</span>
+          Featured <span className=''>Projects</span>
         </motion.h2>
 
         <motion.div

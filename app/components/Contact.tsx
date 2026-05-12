@@ -55,13 +55,13 @@ const Contact = () => {
     <section id='contact' className='py-20 md:py-24 bg-transparent text-white'>
       <div className='max-w-275 mx-auto px-4 md:px-6'>
         <motion.h2
-          className='text-3xl md:text-4xl font-bold mb-12 text-center text-foreground'
+          className='text-3xl md:text-4xl font-bold mb-12 text-center text-white'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
         >
-          Get In <span className='text-blue-600'>Touch</span>
+          Get In <span className=''>Touch</span>
         </motion.h2>
 
         <motion.div

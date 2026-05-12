@@ -1,8 +1,8 @@
-'use client'; // Required for hooks and browser APIs
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link'; // Use Next.js Link for better optimization
+import Link from 'next/link';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -18,14 +18,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // 1. Handle background change on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 2. Intersection Observer for Active Links
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,7 +33,7 @@ const Navbar = () => {
           }
         });
       },
-      { rootMargin: '-50% 0px -50% 0px' }, // Detect when section is in the middle of screen
+      { rootMargin: '-50% 0px -50% 0px' },
     );
 
     navLinks.forEach(({ href }) => {
@@ -45,14 +43,12 @@ const Navbar = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  // 3. Smooth Scroll Handler
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
-    e.preventDefault(); // Prevent default jump behavior
-    setIsOpen(false); // Close mobile menu
+    e.preventDefault();
+    setIsOpen(false);
 
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
@@ -61,8 +57,6 @@ const Navbar = () => {
       behavior: 'smooth',
       block: 'start',
     });
-
-    // Update URL hash without jumping
     window.history.pushState({}, '', href);
   };
 
@@ -79,7 +73,7 @@ const Navbar = () => {
           <Link
             href='#home'
             onClick={(e) => handleClick(e, '#home')}
-            className='text-xl font-bold text-blue-600'
+            className='text-xl font-bold text-white'
           >
             Gopi.
           </Link>

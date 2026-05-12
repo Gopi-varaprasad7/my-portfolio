@@ -36,7 +36,7 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
         >
-          Experience & <span className='text-blue-600'>Education</span>
+          Experience & <span className=''>Education</span>
         </motion.h2>
 
         <div className='relative'>

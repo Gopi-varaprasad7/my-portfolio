@@ -55,7 +55,7 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          Skills & <span className='text-blue-600'>Technologies</span>
+          Skills & <span className=''>Technologies</span>
         </motion.h2>
 
         <motion.div
