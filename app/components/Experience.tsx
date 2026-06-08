@@ -1,106 +1,70 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap } from 'lucide-react';
-
-const timelineData = [
-  {
-    type: 'work' as const,
-    title: 'Associate Software Engineer',
-    org: 'Fitniti',
-    period: '2025 Jan — 2025 December',
-    description:
-      'Leading the frontend team in building a SaaS platform with React and TypeScript. Improved page load speed by 40% and implemented a design system used across 5 products.',
-  },
-  {
-    type: 'education' as const,
-    title: 'B.Tech in Computer Science',
-    org: 'Sree Rama Engineering Collage',
-    period: '2020 — 2024',
-    description:
-      "Graduated with distinction. Focused on algorithms, data structures, and web technologies. Led the Collage's coding club.",
-  },
-];
-
 export default function Experience() {
+  const history = [
+    {
+      date: 'Jan 2025 — Dec 2025',
+      role: 'Associate Software Engineer',
+      company: 'Fitniti',
+      desc: "Delivered 5+ production-ready features for Fitniti's fitness web platform. Built and maintained responsive React components, implemented secure RESTful APIs with MySQL, and collaborated closely with UI/UX designers to convert Figma mockups into pixel-perfect interfaces — reducing design-to-dev turnaround by 30%.",
+      tags: [
+        'React.js',
+        'Tailwind CSS',
+        'Node.js',
+        'MySQL',
+        'REST APIs',
+        'Figma',
+      ],
+    },
+    {
+      date: '2020 — 2024',
+      role: 'B.Tech — Computer Science & Engineering',
+      company: 'Sree Rama Engineering College, Tirupati',
+      desc: 'Graduated with strong foundation in algorithms, data structures, and software engineering. Awarded Best Innovative Idea by APSCHE (Andhra Pradesh State Council of Higher Education) — recognized at state level for technical innovation during this period.',
+      tags: ['DSA', 'System Design', 'APSCHE Award'],
+    },
+  ];
+
   return (
-    <section
-      id='experience'
-      className='py-20 md:py-24 bg-transparent text-white'
-    >
-      <div className='max-w-275 mx-auto px-4 md:px-6'>
-        <motion.h2
-          className='text-3xl md:text-4xl font-bold mb-12 text-center text-white'
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35 }}
-        >
-          Experience & <span className=''>Education</span>
-        </motion.h2>
+    <section id='experience' className='py-24 px-[5vw]'>
+      <div className='max-w-7xl mx-auto'>
+        <div className='text-[11px] tracking-widest uppercase text-brand-green font-medium mb-3'>
+          Experience
+        </div>
+        <h2 className='font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-tight mb-14'>
+          Where I've <span className='text-brand-green'>shipped</span>.
+        </h2>
 
-        <div className='relative'>
-          {/* Vertical Central Line */}
-          <div className='absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5' />
-
-          <div className='space-y-12'>
-            {timelineData.map((entry, i) => {
-              const isLeft = i % 2 === 0;
-
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className={`relative flex flex-col md:flex-row ${
-                    isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } items-start md:items-center gap-4 md:gap-8`}
-                >
-                  {/* Timeline Dot */}
-                  <div className='absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-blue-500/50 to-transparent md:-translate-x-0.5' />
-
-                  {/* Content Card Container */}
-                  <div
-                    className={`ml-10 md:ml-0 md:w-1/2 ${
-                      isLeft
-                        ? 'md:pr-12 md:text-right'
-                        : 'md:pl-12 md:text-left'
-                    }`}
-                  >
-                    <div className='rounded-xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow'>
-                      {/* Icon and Date Header */}
-                      <div
-                        className={`flex items-center gap-2 mb-3 flex-wrap ${
-                          isLeft ? 'md:justify-end' : 'md:justify-start'
-                        }`}
-                      >
-                        {entry.type === 'work' ? (
-                          <Briefcase size={16} className='text-blue-600' />
-                        ) : (
-                          <GraduationCap size={16} className='text-blue-600' />
-                        )}
-                        <span className='text-xs text-muted-foreground font-mono font-medium'>
-                          {entry.period}
-                        </span>
-                      </div>
-
-                      <h3 className='font-bold text-white text-lg'>
-                        {entry.title}
-                      </h3>
-                      <p className='text-blue-600 font-medium text-sm mb-3'>
-                        {entry.org}
-                      </p>
-                      <p className='text-muted-foreground text-sm leading-relaxed'>
-                        {entry.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+        <div className='flex flex-col gap-6'>
+          {history.map((job, i) => (
+            <div
+              key={i}
+              className='bg-bg-dark-300 border border-border-dim rounded-2xl p-8 grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 transition-colors duration-200 hover:border-border-bright'
+            >
+              <div className='text-xs text-text-muted font-normal pt-1'>
+                {job.date}
+              </div>
+              <div>
+                <div className='font-syne text-xl font-semibold text-text-primary'>
+                  {job.role}
+                </div>
+                <div className='text-sm text-brand-green mt-1 mb-3'>
+                  {job.company}
+                </div>
+                <p className='text-sm text-text-secondary leading-relaxed'>
+                  {job.desc}
+                </p>
+                <div className='flex flex-wrap gap-2 mt-4'>
+                  {job.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className='bg-brand-blue/5 border border-brand-blue/15 text-brand-blue text-xs px-2.5 py-0.5 rounded-full'
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
