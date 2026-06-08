@@ -1,36 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors */
+  --color-bg-dark-100: #080C10;
+  --color-bg-dark-200: #0D1117;
+  --color-bg-dark-300: #131920;
+  
+  --color-border-dim: rgba(255, 255, 255, 0.07);
+  --color-border-bright: rgba(255, 255, 255, 0.13);
+  
+  --color-text-primary: #E8EDF2;
+  --color-text-secondary: #7A8899;
+  --color-text-muted: #4A5568;
+  
+  --color-brand-green: #00D68F;
+  --color-brand-green-hover: #00A36C;
+  --color-brand-blue: #4D9EF7;
+  --color-brand-amber: #F7B24D;
+
+  /* Typography */
+  --font-syne: var(--font-syne), sans-serif;
+  --font-dm: var(--font-dm-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bg-dark-100);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-@font-face {
-  font-family: "Roba";
-  src: url("assets/fonts/Roba-4n2zl.ttf") format("woff2");
-  font-weight: 400;
-  font-style: normal;
+/* Retaining your specific keyframes for dynamic states */
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
-@utility font-roba {
-  font-family: "Roba", sans-serif;
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-opacity 2s infinite;
+}
+
+.animate-fade-up {
+  animation: fade-slide-up 0.6s ease both;
 }
