@@ -1,116 +1,73 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, FileDown } from 'lucide-react';
-
-const roles = ['Full-Stack Developer', 'React Enthusiast', 'Problem Solver'];
-
-const Hero = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [text, setText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  // Typewriter effect logic
-  useEffect(() => {
-    const currentRole = roles[roleIndex];
-    const speed = isDeleting ? 40 : 80;
-
-    if (!isDeleting && text === currentRole) {
-      const timeout = setTimeout(() => setIsDeleting(true), 1800);
-      return () => clearTimeout(timeout);
-    }
-
-    if (isDeleting && text === '') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setText(
-        isDeleting
-          ? currentRole.substring(0, text.length - 1)
-          : currentRole.substring(0, text.length + 1),
-      );
-    }, speed);
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, roleIndex]);
-
-  // Refined Scroll Handler for Next.js
-  const scrollTo = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+export default function Hero() {
   return (
-    <section
-      id='home'
-      className='min-h-screen flex items-center pt-16 bg-transparent text-white'
-    >
-      <div className='max-w-275 mx-auto px-4 md:px-6 w-full'>
-        <div className='flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16'>
-          {/* Text Content */}
-          <motion.div
-            className='flex-1 text-center md:text-left'
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className='font-roba text-muted-foreground text-2xl  font-medium mb-3'>
-              Hi, I&apos;m Gopi 👋
-            </p>
-            <h1 className='font-roba text-3xl sm:text-4xl md:text-7xl font-bold text-white leading-tight mb-4'>
-              I build fast, scalable web apps that users actually{' '}
-              <span className='text-primary'>love.</span>
-            </h1>
+    <section id="home" className="min-h-screen flex items-center px-[5vw] pt-28 pb-20 relative overflow-hidden">
+      {/* Decorative Blur Ambient Glow */}
+      <div className="absolute w-[600px] h-[600px] rounded-full bg-radial from-brand-green/5 to-transparent top-[-100px] right-[-100px] pointer-events-none" />
 
-            <div className='h-8 mb-6'>
-              <span className='text-muted-foreground font-mono text-lg'>
-                {text}
-                <span className='animate-pulse text-primary ml-1'>|</span>
-              </span>
+      <div className="grid grid-cols-1 lg:grid-template-cols lg:grid-cols-[1fr_420px] gap-16 lg:gap-20 items-center max-w7xl mx-auto w-full">
+        <div className="animate-fade-up">
+          <div className="inline-flex items-center gap-2 bg-brand-green/10 border border-brand-green/20 rounded-full px-3.5 py-1.5 text-xs text-brand-green mb-7">
+            <span className="w-1.5 h-1.5 bg-brand-green rounded-full animate-pulse-slow" />
+            Available for opportunities
+          </div>
+          
+          <h1 className="font-syne text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] text-text-primary">
+            Building products<br />that <em className="text-brand-green not-italic">actually</em><br />ship.
+          </h1>
+          
+          <p className="text-lg text-text-secondary font-light max-w-lg mt-5 leading-relaxed">
+            Full Stack Developer focused on AI-integrated web platforms. I turn ideas into production-grade software — fast, scalable, and built to last.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 mt-10">
+            <a href="#projects" className="bg-brand-green text-bg-dark-100 font-medium text-sm px-7 py-3 rounded-lg transition-all inline-flex items-center gap-2 group hover:opacity-90 hover:-translate-y-0.5">
+              View my work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" className="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/resume.pdf" className="border border-border-bright text-text-primary text-sm px-7 py-3 rounded-lg transition-all inline-flex items-center gap-2 hover:border-brand-green hover:-translate-y-0.5">
+              Download Resume
+            </a>
+          </div>
+          
+          <div className="flex gap-9 mt-14">
+            <div>
+              <div className="font-syne text-3xl font-bold text-text-primary leading-none">1+</div>
+              <div className="text-[11px] text-text-muted mt-1 tracking-wider uppercase">Year production exp</div>
             </div>
-            <div className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start'>
-              {/* View Work Button */}
-              <button
-                onClick={() => scrollTo('#projects')}
-                className='flex items-center justify-center gap-2 border px-6 py-2 rounded text-white bg-blue-600 hover:bg-blue-700 transition-colors'
-              >
-                View my work <ArrowDown size={16} />
-              </button>
+            <div>
+              <div className="font-syne text-3xl font-bold text-text-primary leading-none">5+</div>
+              <div className="text-[11px] text-text-muted mt-1 tracking-wider uppercase">Features shipped</div>
+            </div>
+            <div>
+              <div className="font-syne text-3xl font-bold text-text-primary leading-none">2</div>
+              <div className="text-[11px] text-text-muted mt-1 tracking-wider uppercase">SaaS platforms built</div>
+            </div>
+          </div>
+        </div>
 
-              {/* Resume Button */}
-              <a
-                href='/resume.pdf'
-                download='resume.pdf'
-                className='border rounded flex items-center justify-center gap-2 px-6 py-2 transition-colors hover:bg-blue-400 hover:text-white'
-              >
-                <FileDown size={16} />
-                Download Resume
-              </a>
+        {/* Code Execution Card Visual */}
+        <div className="bg-bg-dark-300 border border-border-dim rounded-2xl p-8 relative before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-brand-green/15 before:to-transparent before:pointer-events-none animate-fade-up [animation-delay:0.2s]">
+          <div className="font-mono text-xs text-text-secondary space-y-2 leading-relaxed">
+            <p className="text-text-muted italic">planly/api/roadmap.ts</p>
+            <p><span className="text-[#C792EA]">export async function</span> <span className="text-[#82AAFF]">generateRoadmap</span>(</p>
+            <p>&nbsp;&nbsp;user: <span className="text-[#82AAFF]">UserContext</span></p>
+            <p>) &#123;</p>
+            <p>&nbsp;&nbsp;<span className="text-[#C792EA]">const</span> plan = <span className="text-[#C792EA]">await</span> <span className="text-[#82AAFF]">openai</span>.chat(&#123;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;model: <span className="text-brand-green">gpt-4o&quot;</span>,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;system: <span className="text-[#82AAFF]">buildPrompt</span>(user),</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;duration: <span className="text-brand-amber">90-day</span>,</p>
+            <p>&nbsp;&nbsp;&#125;)</p>
+            <p>&nbsp;&nbsp;<span className="text-[#C792EA]">return</span> <span className="text-[#82AAFF]">decomposeTasks</span>(plan)</p>
+            <p>&#125;</p>
+          </div>
+          <div className="mt-5 pt-5 border-t border-white/5">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse-slow" />
+              <span className="text-xs text-text-muted">Deployed on Vercel · Edge Functions active</span>
             </div>
-          </motion.div>
-
-          {/* Avatar / Image */}
-          <motion.div
-            className='shrink-0'
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className='w-48 h-48 md:w-98 md:h-98 rounded-full border-4 border-blue-600 bg-muted flex items-center justify-center text-5xl md:text-7xl shadow-2xl'>
-              <img src='/gopi.png' alt='Gopi' />
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
