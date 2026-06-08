@@ -30,7 +30,7 @@ export default function Experience() {
           Experience
         </div>
         <h2 className='font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-tight mb-14'>
-          Where I've <span className='text-brand-green'>shipped</span>.
+          Where I&apos;ve <span className='text-brand-green'>shipped</span>.
         </h2>
 
         <div className='flex flex-col gap-6'>

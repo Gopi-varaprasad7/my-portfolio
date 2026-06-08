@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="max-w-xl mx-auto text-center">
         <div className="text-[11px] tracking-widest uppercase text-brand-green font-medium mb-3">Get in touch</div>
         <h2 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-tight">
-          Let's build<br />something <span className="text-brand-green">great</span>.
+          Let&apos;s build<br />something <span className="text-brand-green">great</span>.
         </h2>
         <p className="text-sm text-text-secondary font-light mt-2 mb-10">Open to SDE roles, freelance projects, and interesting collaborations.</p>
         

@@ -25,7 +25,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="text-[11px] tracking-widest uppercase text-brand-green font-medium mb-3">Projects</div>
         <h2 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-tight mb-2">
-          Things I've <span className="text-brand-green">built</span>.
+          Things I&apos;ve <span className="text-brand-green">built</span>.
         </h2>
         <p className="text-sm text-text-secondary font-light max-w-md mb-14">Real products, real infrastructure, real users — not todo apps.</p>
 

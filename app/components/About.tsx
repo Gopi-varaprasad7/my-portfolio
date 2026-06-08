@@ -36,7 +36,7 @@ export default function About() {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start mt-14'>
           <div className='text-text-secondary font-light space-y-5 leading-relaxed text-base'>
             <p>
-              I'm Gopi — a Full Stack Developer from Hyderabad with{' '}
+              I&apos;m Gopi — a Full Stack Developer from Hyderabad with{' '}
               <strong>1 year of production experience</strong> at Fitniti, where
               I built and shipped real features used by real users every day.
             </p>
