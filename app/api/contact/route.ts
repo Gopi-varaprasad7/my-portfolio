@@ -1,14 +1,10 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Fetch the key safely
-const apiKey = process.env.RESEND_API_KEY;
-
-// Fallback to a string placeholder during Next.js build optimization paths
-const resend = new Resend(apiKey || 'BUILD_STAGE_FALLBACK');
-
 export async function POST(req: Request) {
-  // If the API key is actually missing when a real user tries to hit the endpoint
+  const apiKey = process.env.RESEND_API_KEY;
+
+  // 1. Guard check right away when the endpoint is hit at runtime
   if (!apiKey) {
     console.error(
       'Execution error: RESEND_API_KEY environment variable is not configured.',
@@ -21,6 +17,9 @@ export async function POST(req: Request) {
 
   try {
     const { name, email, message } = await req.json();
+
+    // 2. Instantiate Resend dynamically inside the runtime scope
+    const resend = new Resend(apiKey);
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
