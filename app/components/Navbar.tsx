@@ -73,10 +73,9 @@ const Navbar = () => {
         <div className='flex items-center justify-between h-16'>
           <Link
             href='#home'
-            onClick={(e) => handleClick(e, '#home')}
-            className='text-xl font-bold text-white'
+            className='font-syne font-extrabold text-xl text-text-primary tracking-tight'
           >
-            Gopi.
+            gopi<span className='text-brand-green'>.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -86,9 +85,9 @@ const Navbar = () => {
                 key={href}
                 href={href}
                 onClick={(e) => handleClick(e, href)}
-                className={`text-sm font-medium transition-colors hover:text-blue-500 ${
+                className={`text-sm font-medium transition-colors hover:text-green-500 ${
                   activeSection === href.slice(1)
-                    ? 'text-blue-600'
+                    ? 'text-green-600'
                     : 'text-white dark:text-slate-400'
                 }`}
               >
